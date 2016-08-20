@@ -36,6 +36,7 @@ if (!isset($_SESSION['CREATED'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -87,5 +88,7 @@ if (!isset($_SESSION['CREATED'])) {
 			<h4>Copyright &copy; 2016 Servitalleres</h4>
 		</div>
 	</div>
+	<script type="text/javascript" src="js/scrolltotop.js"></script>
+	<a href="#" class="scrollToTop"></a>
 </body>
 </html>

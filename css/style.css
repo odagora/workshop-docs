@@ -31,16 +31,55 @@ body {
 	font-size: 70%;
 }
 
-.logout {
-	float: right;
-}
-
 .page-header {
 	border-bottom: 2px solid #e0e0e0;
+}
+
+@media screen and (min-width: 420px){
+	.logout {
+		float: right;
+	}
+
+	.scrollToTop {
+		right: 40px;
+	}
 }
 
 @media screen and (max-width: 420px){
 	.header-info {
 		text-align: center;
 	}
+
+	.logout {
+		text-align: center;
+	}
+
+	.scrollToTop {
+		right: 10px;
+	}
 }
+
+@media screen and (max-width: 992px){
+	/*** SCROLL UP BUTTON ***/
+	.scrollToTop{
+		width:40px; 
+		height:50px;
+		/*padding:10px;*/ 
+		text-align:center; 
+		background: whiteSmoke;
+		font-weight: bold;
+		color: #444;
+		text-decoration: none;
+		position:fixed;
+		bottom:20px;
+		/*right:10px;*/
+		display:none;
+		background: url('../img/arrow12.png') no-repeat 0px 20px;
+	}
+	.scrollToTop:hover{
+		text-decoration:none;
+	}
+
+}
+
+

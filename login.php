@@ -39,7 +39,8 @@ if (isset($_POST['submit'])) {
 
 		//gives error if the password is wrong
 	 	if ($_POST['pass'] != $info['password']){
-	 		die('Incorrect password, please <a href="login.php">try again</a>.'); 
+	 		header("Content-type: text/html; charset=utf8");
+	 		die('Contraseña incorrecta, <a href="login.php">intente de nuevo</a>.'); 
 	 	}
 		
 		else{ // if login is ok we start session and redirect to members area
