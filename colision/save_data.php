@@ -1,6 +1,6 @@
 <?php
 
-include ('info.php'); //Database connection
+include ('../info.php'); //Database connection
 
 $errors_array = array_filter($errors);
 

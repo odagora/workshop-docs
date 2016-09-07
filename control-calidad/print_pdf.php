@@ -23,7 +23,7 @@ $pdf = new Pdf(array(
     'margin-left'   => 0,
 	));
 
-$pdf->addPage('localhost/control-calidad/printcc.html');
+$pdf->addPage('localhost/docs/control-calidad/printcc.html');
 
 // On some systems you may have to set the path to the wkhtmltopdf executable
 $pdf->binary = 'C:\Archivos de programa\wkhtmltopdf\bin\wkhtmltopdf.exe';

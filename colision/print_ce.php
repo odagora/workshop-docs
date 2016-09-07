@@ -3,11 +3,11 @@
 ob_start();
 session_start();
 if (!$_SESSION['logged']) {
-	header("Location: login.php");
+	header("Location: ../login.php");
 	exit;
 }
 //Connect to the database
-include ('info.php');
+include ('../info.php');
 // require ('search.php');
 ?>
 

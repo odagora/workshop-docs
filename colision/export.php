@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (!$_SESSION['logged']) {
-	header("Location: login.php");
+	header("Location: ../login.php");
 	exit;
 }
 
-include ('info.php'); //Database connection
+include ('../info.php'); //Database connection
 
 $search1 = $_SESSION['cons1'];
 /* vars for export */

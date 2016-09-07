@@ -2,16 +2,16 @@
 //Verify if session started, else redirect to login.php
 session_start();
 if (!$_SESSION['logged']) {
-	header("Location: login.php");
+	header("Location: ../login.php");
 	exit;
 }
 echo "Bienvenido, ".$_SESSION['username'];
 echo "<br><br>";
-echo "<a href=login.php>Cerrar Sesión</a>";
+echo "<a href=index.php>Regresar</a>";
 echo "<br><br>";
-echo "<a href=index.php>Volver al inicio</a>";
+echo "<a href=../login.php>Cerrar Sesión</a>";
 //
-include ('info.php'); //Database connection
+include ('../info.php'); //Database connection
 require 'data_check.php'; //Input field data check file 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

@@ -2,15 +2,15 @@
 //Verify if session started, else redirect to login.php
 session_start();
 if (!$_SESSION['logged']) {
-	header("Location: login.php");
+	header("Location: ../login.php");
 	exit;
 }
 //Connect to the database
-include ('info.php');
+include ('../info.php');
 // include ('print_cc.php');
 
 //Include the autoloader
-require '../phpwkhtmltopdf/vendor/autoload.php';
+require '../../phpwkhtmltopdf/vendor/autoload.php';
 //webserver
 // require '../../phpwkhtmltopdf/vendor/autoload.php';
 
@@ -21,10 +21,10 @@ $pdf = new Pdf(array(
 	'page-size' => 'Letter',
 	'no-outline',
 	'disable-smart-shrinking',
-	'user-style-sheet' => 'localhost/colision/css/pdf.css',
+	'user-style-sheet' => 'localhost/docs/colision/css/pdf.css',
 	));
 
-$pdf->addPage('localhost/colision/printce.html');
+$pdf->addPage('localhost/docs/colision/printce.html');
 //webserver
 // $pdf->addPage('/home/servital/public_html/control-calidad/printcc.html');
 
