@@ -69,7 +69,7 @@ if (!isset($_SESSION['CREATED'])) {
 		<div class="row">
 			<div class="col-md-3">
 				<h3><div class="label label-default">COLISIÓN EXPRÉS</div></h3>	
-				<a href=""><img src="img/car-painting.png"></a>
+				<a href="colision/index.php"><img src="img/car-painting.png"></a>
 			</div>
 			<div class="col-md-3">
 				<h3><div class="label label-default">FOTOS OT</div></h3>	
