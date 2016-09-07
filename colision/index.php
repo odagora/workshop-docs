@@ -110,7 +110,7 @@ require_once 'save_data.php'; //Save input to database
 			} 
 			      }
 			    } // end of function stateck
-			var url="dd.php";
+			var url="../dd.php";
 			var cat_id=document.getElementById('s1').value;
 			url=url+"?category="+cat_id;
 			url=url+"&sid="+Math.random();
