@@ -32,7 +32,7 @@ if (!isset($_SESSION['CREATED'])) {
 // var_dump($_SESSION['CREATED']);
 
 //
-require 'connect_db.php'; //Database connection
+require '../connect_db.php'; //Database connection
 require 'data_check.php'; //Input field data check file
 require_once 'save_data.php'; //Save input to database
 ?>
