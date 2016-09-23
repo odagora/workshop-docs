@@ -30,7 +30,7 @@ $pdf->addPage('localhost/workshop-docs/peritajes/printp.html');
 // $pdf->addPage('/home/servital/public_html/peritajes/printp.html');
 
 // On some systems you may have to set the path to the wkhtmltopdf executable
-$pdf->binary = 'C:\Archivos de programa\wkhtmltopdf\bin\wkhtmltopdf.exe';
+$pdf->binary = 'C:\Program files\wkhtmltopdf\bin\wkhtmltopdf.exe';
 //webserver
 // $pdf->binary = '/home/servital/wkhtmltox/bin/wkhtmltopdf';
 
