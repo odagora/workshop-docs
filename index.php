@@ -63,7 +63,7 @@ if (!isset($_SESSION['CREATED'])) {
 			</div>
 			<div class="col-md-4">
 				<h3><div class="label label-default">INSPECCIONES VISUALES</div></h3>	
-				<a href=""><img src="img/car-repair-check.png"></a>
+				<a href="inspecciones/index.php"><img src="img/car-repair-check.png"></a>
 			</div>
 		</div>
 		<div class="row">
