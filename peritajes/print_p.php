@@ -16,7 +16,7 @@ include ('../info.php');
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<title>Peritaje de Vehículos Usados</title>
-		<link rel="stylesheet" href="css/view.css">
+		<link rel="stylesheet" href="css/style1.css">
 		<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/signaturepad/jquery.signaturepad.min.js"></script>
@@ -55,7 +55,7 @@ include ('../info.php');
 						</div>
 					</div>
 				</div>
-				<div class="row" style="padding-top:10px">
+				<div class="row">
 					<div class="col-12">
 						<h1>PERITAJE DE VEHICULOS USADOS</h1>
 					</div>
@@ -165,7 +165,7 @@ include ('../info.php');
 							if ($mat <= 2) {
 								echo "<table>
 									<thead>
-										<tr style=height:21px>
+										<tr style=height:20px>
 											<th style=width:6% scope=col><span style=display:none>1</span></th>
 											<th style=width:55% scope=col><span>$name</span></th>
 								            <th  style=width:10% scope=col>B</th>
@@ -192,7 +192,7 @@ include ('../info.php');
 								    	}
 								    	echo "</tr>";
 					   					$k++;
-					   					if ($mat==2 && $k==43) {
+					   					if ($mat==2 && $k==39) {
 									   	 	break;
 									    }
 				   					}
@@ -210,7 +210,7 @@ include ('../info.php');
 							if ($mat == 2) {
 								echo "<table>
 									<thead>
-										<tr style=height:21px>
+										<tr style=height:20px>
 											<th style=width:6% scope=col><span style=display:none>1</span></th>
 											<th style=width:55% scope=col><span style=display:none>$name</span></th>
 								            <th  style=width:10% scope=col>B</th>
@@ -220,7 +220,7 @@ include ('../info.php');
 										</tr>
 									</thead>
 									<tbody>";
-									for ($i=17; $i <= count($list[$mat]) ; $i++) {
+									for ($i=14; $i <= count($list[$mat]) ; $i++) {
 								    	$concept = $list[$mat][$i];
 								    	$matrix = $matrixNames[$mat][$i];
 								    	echo "<tr class=alt>
@@ -245,7 +245,7 @@ include ('../info.php');
 							if ($mat>2 && $mat<= 5) {
 								echo "<table>
 									<thead>
-										<tr style=height:21px>
+										<tr style=height:20px>
 											<th style=width:6% scope=col><span style=display:none>1</span></th>
 											<th style=width:55% scope=col><span>$name</span></th>
 								            <th  style=width:10% scope=col>B</th>
@@ -272,7 +272,7 @@ include ('../info.php');
 								    	}
 								    	echo "</tr>";
 					   					$k++;
-					   					if ($mat==5 && $k==41) {
+					   					if ($mat==5 && $k==37) {
 									   	 	break;
 									    }
 				   					}
@@ -289,7 +289,7 @@ include ('../info.php');
 							if ($mat == 5) {
 								echo "<table>
 									<thead>
-										<tr style=height:21px>
+										<tr style=height:20px>
 											<th style=width:6% scope=col><span style=display:none>1</span></th>
 											<th style=width:55% scope=col><span style=display:none>$name</span></th>
 								            <th  style=width:10% scope=col>B</th>
@@ -324,7 +324,7 @@ include ('../info.php');
 							if ($mat > 5) {
 								echo "<table>
 									<thead>
-										<tr style=height:21px>
+										<tr style=height:20px>
 											<th style=width:6% scope=col><span style=display:none>1</span></th>
 											<th style=width:55% scope=col><span>$name</span></th>
 								            <th  style=width:10% scope=col>B</th>

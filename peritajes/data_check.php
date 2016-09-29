@@ -71,6 +71,8 @@ $month = $day = $year = $firstname = $lastname = $idnumber = $phone = $email = $
 $search2 ="";
 $search2Err2 = "";
 
+include('lists.php');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if(empty($_POST["month"]) || empty($_POST["day"]) || empty($_POST["year"])){
     $dateErr = "* Fecha requerida";
@@ -218,7 +220,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //Check if all items have an option selected (change number as needed)
   if (!isset($_POST['matrix_1'])) {
     $matrix1Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_1'])<27){
+  } elseif (count($_POST['matrix_1'])<count($list[1])){
     $matrix1Err = "* Se debe seleccionar una opción por ítem";
   }
 
@@ -226,7 +228,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!isset($_POST['matrix_2'])) {
     $matrix2Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_2'])<22){
+  } elseif (count($_POST['matrix_2'])<count($list[2])){
     $matrix2Err = "* Se debe seleccionar una opción por ítem";
   }
 
@@ -234,7 +236,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!isset($_POST['matrix_3'])) {
     $matrix3Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_3'])<13){
+  } elseif (count($_POST['matrix_3'])<count($list[3])){
     $matrix3Err = "* Se debe seleccionar una opción por ítem";
   }
 
@@ -242,7 +244,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!isset($_POST['matrix_4'])) {
     $matrix4Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_4'])<15){
+  } elseif (count($_POST['matrix_4'])<count($list[4])){
     $matrix4Err = "* Se debe seleccionar una opción por ítem";
   }
 
@@ -250,7 +252,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!isset($_POST['matrix_5'])) {
     $matrix5Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_5'])<9){
+  } elseif (count($_POST['matrix_5'])<count($list[5])){
     $matrix5Err = "* Se debe seleccionar una opción por ítem";
   }
 
@@ -258,7 +260,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!isset($_POST['matrix_6'])) {
     $matrix6Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_6'])<24){
+  } elseif (count($_POST['matrix_6'])<count($list[6])){
     $matrix6Err = "* Se debe seleccionar una opción por ítem";
   }
 
@@ -266,7 +268,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!isset($_POST['matrix_7'])) {
     $matrix7Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_7'])<10){
+  } elseif (count($_POST['matrix_7'])<count($list[7])){
     $matrix7Err = "* Se debe seleccionar una opción por ítem";
   }
 
@@ -274,7 +276,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!isset($_POST['matrix_8'])) {
     $matrix8Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_8'])<5){
+  } elseif (count($_POST['matrix_8'])<count($list[8])){
     $matrix8Err = "* Se debe seleccionar una opción por ítem";
   }
 
@@ -285,8 +287,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $comment1 = test_input($_POST["comment1"]);
       // check if comment1 only contains numbers, letters and whitespaces
-      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$() ]*$/",$comment1)) {
-        $comment1Err = "* Solo números, letras y espacios permitidos"; 
+      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$()\-\/\r\n ]*$/",$comment1)) {
+        $comment1Err = "* Caracter no permitido"; 
       }
     }
 
@@ -297,8 +299,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $comment2 = test_input($_POST["comment2"]);
       // check if comment1 only contains numbers, letters and whitespaces
-      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$() ]*$/",$comment2)) {
-        $comment2Err = "* Solo números, letras y espacios permitidos"; 
+      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$()\-\/\r\n ]*$/",$comment2)) {
+        $comment2Err = "* Caracter no permitido"; 
       }
     }
 
@@ -309,8 +311,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $comment3 = test_input($_POST["comment3"]);
       // check if comment1 only contains numbers, letters and whitespaces
-      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$() ]*$/",$comment3)) {
-        $comment3Err = "* Solo números, letras y espacios permitidos"; 
+      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$()\-\/\r\n ]*$/",$comment3)) {
+        $comment3Err = "* Caracter no permitido"; 
       }
     }
 
@@ -321,8 +323,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $comment4 = test_input($_POST["comment4"]);
       // check if comment1 only contains numbers, letters and whitespaces
-      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$() ]*$/",$comment4)) {
-        $comment4Err = "* Solo números, letras y espacios permitidos"; 
+      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$()\-\/\r\n ]*$/",$comment4)) {
+        $comment4Err = "* Caracter no permitido"; 
       }
     }
 
@@ -333,8 +335,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $comment5 = test_input($_POST["comment5"]);
       // check if comment1 only contains numbers, letters and whitespaces
-      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$() ]*$/",$comment5)) {
-        $comment5Err = "* Solo números, letras y espacios permitidos"; 
+      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$()\-\/\r\n ]*$/",$comment5)) {
+        $comment5Err = "* Caracter no permitido"; 
       }
     }
 
@@ -345,8 +347,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $comment6 = test_input($_POST["comment6"]);
       // check if comment1 only contains numbers, letters and whitespaces
-      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$() ]*$/",$comment6)) {
-        $comment6Err = "* Solo números, letras y espacios permitidos"; 
+      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$()\-\/\r\n ]*$/",$comment6)) {
+        $comment6Err = "* Caracter no permitido"; 
       }
     }
 
@@ -357,8 +359,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $comment7 = test_input($_POST["comment7"]);
       // check if comment1 only contains numbers, letters and whitespaces
-      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$() ]*$/",$comment7)) {
-        $comment7Err = "* Solo números, letras y espacios permitidos"; 
+      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$()\-\/\r\n ]*$/",$comment7)) {
+        $comment7Err = "* Caracter no permitido"; 
       }
     }
 
@@ -369,8 +371,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $comment8 = test_input($_POST["comment8"]);
       // check if comment1 only contains numbers, letters and whitespaces
-      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$() ]*$/",$comment8)) {
-        $comment8Err = "* Solo números, letras y espacios permitidos"; 
+      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$()\-\/\r\n ]*$/",$comment8)) {
+        $comment8Err = "* Caracter no permitido"; 
       }
     }
 

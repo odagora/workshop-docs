@@ -30,7 +30,13 @@ $pdf = new Pdf(array(
 $pdf->addPage('/home/servital/public_html/docs/peritajes/printp.html');
 
 // On some systems you may have to set the path to the wkhtmltopdf executable
+<<<<<<< HEAD
 // $pdf->binary = 'C:\Archivos de programa\wkhtmltopdf\bin\wkhtmltopdf.exe';
+||||||| merged common ancestors
+$pdf->binary = 'C:\Archivos de programa\wkhtmltopdf\bin\wkhtmltopdf.exe';
+=======
+$pdf->binary = 'C:\Program files\wkhtmltopdf\bin\wkhtmltopdf.exe';
+>>>>>>> 47b4373d96285431e11b9e299470af0bcefa46ac
 //webserver
 $pdf->binary = '/home/servital/wkhtmltox/bin/wkhtmltopdf';
 
