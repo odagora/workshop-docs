@@ -1,7 +1,9 @@
 <?php
 //Verify if session started, else redirect to login.php
 ob_start();
-session_start();
+if(!isset($_SESSION)) { 
+    session_start(); 
+} 
 if (!$_SESSION['logged']) {
 	header("Location: ../login.php");
 	exit;
@@ -10,7 +12,6 @@ if (!$_SESSION['logged']) {
 include ('../info.php');
 // require ('search.php');
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -23,9 +24,9 @@ include ('../info.php');
 		<script type="text/javascript" src="js/signaturepad/jquery.signaturepad.min.js"></script>
 		<script type="text/javascript" src="js/signaturepad/json2.min.js"></script>
 	</head>
-	<body>
+	<body id="report">
 	<?php
-		//set search variable to find results from database
+		//set search variable to find results from database if no form submitted
 		@$search = $_SESSION['cons'];
 		@$doc = $_POST['doc']-1000;
 
@@ -675,12 +676,17 @@ include ('../info.php');
 	</div>
 	<div style="margin: 10px 10px;">
 	<?php $doc1 = $doc;?>
-		<form method="post" action="print_pdf.php">
+		<form name="fpdf" id= "fpdf" method="post" action="print_pdf.php">
 			<th width='60' align='center'>
 				<input type="submit" name="pdf" value="Imprimir en PDF">
 				<input type="hidden" name="doc1" value="<?php echo $doc1;?>" >
 			</th>
 		</form>
-	</div>	 
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+     		$("#fpdf").submit();
+		});
+	</script>	 
 </body>
 </html>

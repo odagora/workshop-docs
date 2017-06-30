@@ -1,6 +1,8 @@
 <?php
 //Verify if session started, else redirect to login.php
-session_start();
+if(!isset($_SESSION)) { 
+    session_start(); 
+} 
 if (!$_SESSION['logged']) {
 	header("Location: ../login.php");
 	exit;
@@ -23,10 +25,10 @@ $pdf = new Pdf(array(
     'margin-left'   => 0,
 	));
 
-$pdf->addPage('localhost/docs/control-calidad/printcc.html');
+$pdf->addPage('localhost/workshop-docs/control-calidad/printcc.html');
 
 // On some systems you may have to set the path to the wkhtmltopdf executable
-$pdf->binary = 'C:\Archivos de programa\wkhtmltopdf\bin\wkhtmltopdf.exe';
+$pdf->binary = 'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe';
 
 @$search = $_SESSION['cons'];
 @$doc1 = $_POST['doc1'];
@@ -57,5 +59,7 @@ while ($row = mysql_fetch_array($result)) {
 	if (!$pdf->send($doc1.'_'.$license.'_'.$day.$month.$year.'.pdf')) {
 	    echo $pdf->getError();
 	}
+
+	$pdf->saveAs('C:/Temp/'.$doc1.'_'.$license.'_'.$day.$month.$year.'.pdf');
 }
 ?>

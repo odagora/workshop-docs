@@ -15,6 +15,7 @@ $errors_array = array_filter($errors);
  	$lastname1 = mysql_real_escape_string(htmlspecialchars($_POST['lastname1']));
  	$firstname = mysql_real_escape_string(htmlspecialchars($_POST['firstname']));
  	$lastname = mysql_real_escape_string(htmlspecialchars($_POST['lastname']));
+ 	$email = mysql_real_escape_string(htmlspecialchars($_POST['email'])); 
  	@$make = $_POST['cat'];
  	@$line = $_POST['subcat'];
  	$model = mysql_real_escape_string(htmlspecialchars($_POST['model']));
@@ -131,7 +132,8 @@ $errors_array = array_filter($errors);
 										 firstname1='$firstname1', 
 										 lastname1='$lastname1',
 										 firstname='$firstname', 
-										 lastname='$lastname',  
+										 lastname='$lastname',
+										 email='$email',  
 										 make='$make',
 										 type='$line',
 										 model='$model', 
@@ -198,9 +200,9 @@ $errors_array = array_filter($errors);
 										 created= '$created'
 										 ")
  		or die(mysql_error());
+ 		unset($_SESSION['cons']);
 		
-		header("location: print_cc.php");
+		header("location: print.php");
 	}
 }
-// var_dump($errors_array);
 ?>

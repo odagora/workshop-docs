@@ -6,6 +6,7 @@ global $nameErr;
 global $last_nameErr;
 global $nameErr1;
 global $last_nameErr1;
+global $emailErr;
 global $makeErr;
 global $lineErr;
 global $modelErr;
@@ -32,6 +33,7 @@ $errors = array('$dateErr' => "",
                 '$last_nameErr' => "", 
                 '$nameErr1' => "", 
                 '$last_nameErr1' => "",
+                '$emailErr' => "",
                 '$makeErr' => "",
                 '$lineErr' => "", 
                 '$modelErr' => "", 
@@ -52,7 +54,7 @@ $errors = array('$dateErr' => "",
                 'comment4Err'=>"");
 
 // $orderErr = $nameErr = $last_nameErr = $emailErr = $genderErr = $websiteErr = "";
-$month = $day = $year = $firstname = $lastname = $make = $model = $license = $mileage = $ordernumber = $firstname1 = $lastname1 =  $comment1 = $comment2 = $comment3 = $comment4 = $nextMileage= $signature="";
+$month = $day = $year = $firstname = $lastname = $email = $make = $model = $license = $mileage = $ordernumber = $firstname1 = $lastname1 =  $comment1 = $comment2 = $comment3 = $comment4 = $nextMileage= $signature="";
 
 //search input text field and error in search.php file
 $search ="";
@@ -134,6 +136,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   array_push($errors, $makeErr);
+
+  if (empty($_POST["email"])) {
+    $emailErr = "* Email requerido";
+  } else {
+    $email = test_input($_POST["email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "* Formato de email incorrecto"; 
+    }
+  }
+
+  array_push($errors, $emailErr);
 
     if (empty($_POST['subcat'])){
     $lineErr = "* Línea del vehículo requerida";
