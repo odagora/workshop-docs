@@ -49,6 +49,11 @@ while ($row2 = mysql_fetch_array($result2)) {
 			window.location.replace("index.php");
 		}
 	</script>
+	<script type="text/javascript">
+		function root(){
+			window.location.replace("../index.php");
+		}
+	</script>
 </head>
 <body id="report">
 <div id="overlay">
@@ -72,7 +77,8 @@ while ($row2 = mysql_fetch_array($result2)) {
 		</th>
   	</form>
   	<button onclick= "search()">Buscar otro peritaje</button>
-  	<button onclick= "home()">Ir al inicio</button>
+  	<button onclick= "home()">Hacer otro peritaje</button>
+  	<button onclick= "root()">Ir al inicio</button>
   </div>
 </div>
 </body>
