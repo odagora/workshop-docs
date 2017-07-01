@@ -37,6 +37,11 @@ while ($row = mysql_fetch_array($result)) {
 			window.location.replace("index.php");
 		}
 	</script>
+	<script type="text/javascript">
+		function root(){
+			window.location.replace("../index.php");
+		}
+	</script>
 </head>
   	<?php 
   		$doc = $doc+1000;
@@ -51,7 +56,8 @@ while ($row = mysql_fetch_array($result)) {
 		</th>
   	</form>
   	<button onclick= "search()">Buscar certificado</button>
-  	<button onclick= "home()">Ir al inicio</button>
+  	<button onclick= "home()">Hacer otro certificado</button>
+  	<button onclick= "root()">Ir al inicio</button>
   </div>
 </div>
 <?php
