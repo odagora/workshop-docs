@@ -1,6 +1,8 @@
 <?php
 //Verify if session started, else redirect to login.php
-session_start();
+if(!isset($_SESSION)) { 
+    session_start(); 
+} 
 if (!$_SESSION['logged']) {
 	header("Location: ../login.php");
 	exit;
@@ -10,9 +12,9 @@ include ('../info.php');
 // include ('print_cc.php');
 
 //Include the autoloader
-// require '../../phpwkhtmltopdf/vendor/autoload.php';
+require '../../phpwkhtmltopdf/vendor/autoload.php';
 //webserver
-require '../../../phpwkhtmltopdf/vendor/autoload.php';
+// require '../../../phpwkhtmltopdf/vendor/autoload.php';
 
 use mikehaertl\wkhtmlto\Pdf;
 
@@ -25,20 +27,15 @@ $pdf = new Pdf(array(
     'margin-left'   => 0,
 	));
 
-// $pdf->addPage('localhost/workshop-docs/peritajes/printp.html');
+$pdf->addPage('localhost/workshop-docs/peritajes/printp.html');
 //webserver
-$pdf->addPage('/home/servital/public_html/docs/peritajes/printp.html');
+// $pdf->addPage('/home/servital/public_html/docs/peritajes/printp.html');
 
 // On some systems you may have to set the path to the wkhtmltopdf executable
-<<<<<<< HEAD
 // $pdf->binary = 'C:\Archivos de programa\wkhtmltopdf\bin\wkhtmltopdf.exe';
-||||||| merged common ancestors
-$pdf->binary = 'C:\Archivos de programa\wkhtmltopdf\bin\wkhtmltopdf.exe';
-=======
 $pdf->binary = 'C:\Program files\wkhtmltopdf\bin\wkhtmltopdf.exe';
->>>>>>> 47b4373d96285431e11b9e299470af0bcefa46ac
 //webserver
-$pdf->binary = '/home/servital/wkhtmltox/bin/wkhtmltopdf';
+// $pdf->binary = '/home/servital/wkhtmltox/bin/wkhtmltopdf';
 
 @$search2 = $_SESSION['cons2'];
 @$doc3 = $_POST['doc3'];
@@ -69,5 +66,7 @@ while ($row2 = mysql_fetch_array($result2)) {
 	if (!$pdf->send($doc3.'_'.$license.'_'.$day.$month.$year.'.pdf')) {
 	    echo $pdf->getError();
 	}
+
+	$pdf->saveAs('C:/Temp/'.$doc3.'_'.$license.'_'.$day.$month.$year.'.pdf');
 }
 ?>

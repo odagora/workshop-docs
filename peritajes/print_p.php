@@ -1,7 +1,9 @@
 <?php
 //Verify if session started, else redirect to login.php
 ob_start();
-session_start();
+if(!isset($_SESSION)) { 
+    session_start(); 
+} 
 if (!$_SESSION['logged']) {
 	header("Location: ../login.php");
 	exit;
@@ -22,7 +24,7 @@ include ('../info.php');
 		<script type="text/javascript" src="js/signaturepad/jquery.signaturepad.min.js"></script>
 		<script type="text/javascript" src="js/signaturepad/json2.min.js"></script>
 	</head>
-	<body>
+	<body id="report">
 		<?php
 		//set search variable to find results from database
 		@$search2 = $_SESSION['cons2'];
@@ -449,12 +451,17 @@ include ('../info.php');
 			</div>
 			<div style="margin: 10px 10px;">
 			<?php $doc3 = $doc2;?>
-				<form method="post" action="print_pdf.php">
+				<form name="fpdf" id= "fpdf" method="post" action="print_pdf.php">
 					<th width='60' align='center'>
 						<input type="submit" name="pdf" value="Imprimir en PDF">
 						<input type="hidden" name="doc3" value="<?php echo $doc3;?>" >
 					</th>
 				</form>
 			</div>
+			<script type="text/javascript">
+				$(document).ready(function(){
+     			$("#fpdf").submit();
+			});
+			</script>
 	</body>
 </html>

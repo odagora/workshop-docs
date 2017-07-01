@@ -107,7 +107,7 @@ require 'data_check.php'; //Input field data check file
 									$date = $runrows2['day']. '/'.$runrows2['month']. '/'.$runrows2['year'];
 					            	
 					            	echo "<tr align='center'>
-							            	<form method=post action=print_p.php target=_blank>
+							            	<form method=post action=print_doc.php>
 								            	<th width='60' align='center'>
 								            		<input type=submit name=doc2 value=$id>
 								            	</th>
