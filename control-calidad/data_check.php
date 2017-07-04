@@ -131,12 +131,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   array_push($errors, $last_nameErr);
 
-  if (@$_POST['cat'] == "") {
-    $makeErr = "* Marca del vehículo requerida";
-  }
-
-  array_push($errors, $makeErr);
-
   if (empty($_POST["email"])) {
     $emailErr = "* Email requerido";
   } else {
@@ -149,7 +143,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   array_push($errors, $emailErr);
 
-    if (empty($_POST['subcat'])){
+  if (@$_POST['cat'] == "") {
+    $makeErr = "* Marca del vehículo requerida";
+  }
+
+  array_push($errors, $makeErr);
+
+  if (empty($_POST['subcat'])){
     $lineErr = "* Línea del vehículo requerida";
   }
 
@@ -322,17 +322,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   array_push($errors, $signatureErr);
 
-  // if (empty($_POST["email"])) {
-  //   $emailErr = "Email is required";
-  // } else {
-  //   $email = test_input($_POST["email"]);
-  //   // check if e-mail address is well-formed
-  //   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-  //     $emailErr = "Invalid email format"; 
-  //   }
-  // }
-
-  //Data check for search.php file
+    //Data check for search.php file
 
   if (empty($_POST['cons'])){
     $searchErr = "* Ingrese un criterio de búsqueda";
