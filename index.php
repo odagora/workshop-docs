@@ -67,21 +67,17 @@ if (!isset($_SESSION['CREATED'])) {
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<h3><div class="label label-default">COLISIÓN EXPRÉS</div></h3>	
 				<a href="colision/index.php"><img src="img/car-painting.png"></a>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<h3><div class="label label-default">FOTOS OT</div></h3>	
-				<a href=""><img src="img/photo-camera.png"></a>
+				<a href="assets/lychee" target="_blank"><img src="img/photo-camera.png"></a>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<h3><div class="label label-default">PRECIOS OM</div></h3>	
 				<a href=""><img src="img/label.png"></a>
-			</div>
-			<div class="col-md-3">
-				<h3><div class="label label-default">COTIZACIONES</div></h3>	
-				<a href=""><img src="img/sales-quotation.png"></a>
 			</div>
 		</div>
 		<div class="footer">
