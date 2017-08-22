@@ -295,7 +295,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $comment4 = test_input($_POST["comment4"]);
       // check if comment1 only contains numbers, letters and whitespaces
-      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$() ]*$/",$comment4)) {
+      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$()\/\\\\ ]*$/",$comment4)) {
         $comment4Err = "* Solo números, letras y espacios permitidos"; 
       }
     }
